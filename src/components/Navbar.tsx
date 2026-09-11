@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { MagneticButton } from './MagneticButton';
 
 interface NavbarProps {
   onNavigate: (sectionId: string) => void;
@@ -20,8 +21,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'py-4 bg-[#0B0E14]/80 backdrop-blur-xl border-b border-[#D98C4A]/15 shadow-lg' : 'py-6 bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        scrolled
+          ? 'py-4 bg-[#0B0E14]/80 backdrop-blur-xl border-b border-[#D98C4A]/15 shadow-lg'
+          : 'py-6 bg-transparent'
       }`}
     >
       {/* Skip to Content button for accessibility */}
@@ -34,41 +37,39 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
         {/* Brand Logo */}
-        <button
-          onClick={() => onNavigate('hero')}
-          className="text-lg sm:text-xl font-bold tracking-tight text-[#F4F1EA] hover:text-[#E8A85C] transition-colors focus:outline-none flex items-center gap-2"
-        >
-          <span className="w-2.5 h-2.5 rounded-full bg-[#D98C4A] inline-block shadow-[0_0_10px_#D98C4A]" />
-          mini websolutions
-        </button>
+        <MagneticButton onClick={() => onNavigate('hero')} cursorType="hover">
+          <div className="text-lg sm:text-xl font-bold tracking-tight text-[#F4F1EA] hover:text-[#E8A85C] transition-colors flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#D98C4A] inline-block shadow-[0_0_10px_#D98C4A]" />
+            mini websolutions
+          </div>
+        </MagneticButton>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-[#94A3B8]">
-          <button
-            onClick={() => onNavigate('work')}
-            className="hover:text-[#F4F1EA] transition-colors focus:outline-none"
-          >
-            Our work
-          </button>
-          <button
-            onClick={() => onNavigate('expertise')}
-            className="hover:text-[#F4F1EA] transition-colors focus:outline-none"
-          >
-            Expertise
-          </button>
-          <button
-            onClick={() => onNavigate('studio')}
-            className="hover:text-[#F4F1EA] transition-colors focus:outline-none"
-          >
-            Studio
-          </button>
-          <button
-            onClick={() => onNavigate('booking')}
-            className="text-[#E8A85C] hover:text-[#F4F1EA] flex items-center gap-1 font-semibold transition-colors focus:outline-none group"
-          >
-            Enquire
-            <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
+        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium text-[#94A3B8]">
+          <MagneticButton onClick={() => onNavigate('work')} cursorType="hover">
+            <span className="hover:text-[#F4F1EA] transition-colors px-2 py-1">
+              Our work
+            </span>
+          </MagneticButton>
+
+          <MagneticButton onClick={() => onNavigate('expertise')} cursorType="hover">
+            <span className="hover:text-[#F4F1EA] transition-colors px-2 py-1">
+              Expertise
+            </span>
+          </MagneticButton>
+
+          <MagneticButton onClick={() => onNavigate('studio')} cursorType="hover">
+            <span className="hover:text-[#F4F1EA] transition-colors px-2 py-1">
+              Studio
+            </span>
+          </MagneticButton>
+
+          <MagneticButton onClick={() => onNavigate('booking')} cursorType="send" cursorText="Send">
+            <span className="text-[#E8A85C] hover:text-[#F4F1EA] flex items-center gap-1 font-semibold transition-colors px-2 py-1 group">
+              Enquire
+              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
+          </MagneticButton>
         </nav>
 
         {/* Mobile Enquire CTA */}

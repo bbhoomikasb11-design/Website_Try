@@ -30,12 +30,12 @@ export const ExpertiseSection: React.FC = () => {
 
   return (
     <section id="expertise" className="relative py-28 px-6 sm:px-8 max-w-7xl mx-auto z-10">
-      {/* Verbatim Section Header */}
+      {/* Verbatim Section Header with Fraunces Display Font */}
       <div className="mb-16">
-        <span className="text-xs font-mono tracking-widest text-[#E8A85C] uppercase block mb-3">
+        <span className="text-xs font-numeral tracking-widest text-[#E8A85C] uppercase block mb-3">
           CAPABILITIES & SERVICES
         </span>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#F4F1EA]">
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.03em] text-[#F4F1EA]">
           Our expertise.
         </h2>
       </div>
@@ -47,11 +47,12 @@ export const ExpertiseSection: React.FC = () => {
           return (
             <div
               key={item.num}
+              data-cursor="hover"
               className="glass-panel glass-panel-hover rounded-2xl p-8 sm:p-10 flex flex-col justify-between relative group"
             >
               <div>
                 <div className="flex items-center justify-between mb-8">
-                  <span className="text-xs font-mono text-[#D98C4A] px-3 py-1 rounded-full border border-[#D98C4A]/25 bg-[#0B0E14]/40">
+                  <span className="text-xs font-numeral font-bold text-[#D98C4A] px-3 py-1 rounded-full border border-[#D98C4A]/25 bg-[#0B0E14]/40">
                     {item.num}
                   </span>
                   <div className="w-10 h-10 rounded-xl bg-[#D98C4A]/10 border border-[#D98C4A]/20 flex items-center justify-center text-[#E8A85C] group-hover:scale-110 transition-transform">
@@ -59,17 +60,17 @@ export const ExpertiseSection: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#F4F1EA] mb-4 group-hover:text-[#E8A85C] transition-colors">
+                <h3 className="font-display text-2xl font-bold text-[#F4F1EA] mb-4 group-hover:text-[#E8A85C] transition-colors">
                   {item.title}
                 </h3>
 
-                <p className="text-[#94A3B8] text-base leading-relaxed font-normal">
+                <p className="font-body text-[#94A3B8] text-base leading-relaxed font-light">
                   {item.description}
                 </p>
               </div>
 
               <div className="mt-8 pt-6 border-t border-[#D98C4A]/10 flex items-center justify-between">
-                <span className="text-xs font-mono text-[#64748B]">Core Discipline</span>
+                <span className="text-xs font-numeral text-[#64748B]">Core Discipline</span>
                 <div className="w-2 h-2 rounded-full bg-[#D98C4A] group-hover:shadow-[0_0_8px_#D98C4A] transition-all" />
               </div>
             </div>

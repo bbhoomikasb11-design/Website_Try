@@ -15,26 +15,29 @@ export const StudioSection: React.FC = () => {
             <Users className="w-7 h-7" />
           </div>
 
-          <span className="text-xs font-mono tracking-widest text-[#E8A85C] uppercase block mb-4">
+          <span className="text-xs font-numeral tracking-widest text-[#E8A85C] uppercase block mb-4">
             STUDIO MODEL
           </span>
 
-          {/* Verbatim Header */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#F4F1EA] mb-6">
-            Three specialists. One studio.
+          {/* Verbatim Header with Fraunces Display Font */}
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.035em] text-[#F4F1EA] mb-6">
+            Three specialists.{' '}
+            <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#F4F1EA] via-[#E8A85C] to-[#D98C4A]">
+              One studio.
+            </span>
           </h2>
 
           {/* Verbatim Copy */}
-          <p className="text-lg sm:text-xl md:text-2xl text-[#94A3B8] max-w-2xl font-normal leading-relaxed mb-10">
+          <p className="font-body text-lg sm:text-xl md:text-2xl text-[#94A3B8] max-w-2xl font-light leading-relaxed mb-10">
             Work directly with the team responsible for your product, from its first decisions through delivery.
           </p>
 
-          <div className="inline-flex items-center gap-6 px-6 py-3 rounded-full border border-[#D98C4A]/20 bg-[#0B0E14]/60 text-xs font-mono text-[#94A3B8]">
+          <div className="inline-flex flex-wrap items-center justify-center gap-6 px-6 py-3 rounded-full border border-[#D98C4A]/20 bg-[#0B0E14]/60 text-xs font-numeral text-[#94A3B8]">
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#E8A85C]" />
               No Account Managers
             </span>
-            <span className="w-1 h-1 rounded-full bg-[#64748B]" />
+            <span className="hidden sm:inline w-1 h-1 rounded-full bg-[#64748B]" />
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#E8A85C]" />
               Direct Engineering & Design

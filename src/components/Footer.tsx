@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { MagneticButton } from './MagneticButton';
 
 export const Footer: React.FC = () => {
   return (
@@ -9,25 +10,24 @@ export const Footer: React.FC = () => {
         {/* Brand */}
         <div className="flex items-center gap-3">
           <span className="w-2 h-2 rounded-full bg-[#D98C4A]" />
-          <span className="font-bold text-[#F4F1EA]">mini websolutions</span>
+          <span className="font-bold text-[#F4F1EA] tracking-tight">mini websolutions</span>
         </div>
 
         {/* Verbatim Copyright */}
-        <div className="text-xs font-mono text-[#94A3B8]">
+        <div className="text-xs font-numeral text-[#94A3B8]">
           © 2026 Mini Web Solutions
         </div>
 
         {/* Verbatim LinkedIn link */}
-        <div>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs font-semibold text-[#E8A85C] hover:text-[#F4F1EA] transition-colors hover:underline"
-          >
+        <MagneticButton
+          as="a"
+          href="https://linkedin.com"
+          cursorType="hover"
+        >
+          <span className="text-xs font-semibold text-[#E8A85C] hover:text-[#F4F1EA] transition-colors hover:underline">
             LinkedIn
-          </a>
-        </div>
+          </span>
+        </MagneticButton>
       </div>
     </footer>
   );

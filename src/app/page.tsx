@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import dynamic from 'next/dynamic';
+import { CustomCursor } from '@/components/CustomCursor';
+import { GrainOverlay } from '@/components/GrainOverlay';
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { WorkSection } from '@/components/sections/WorkSection';
@@ -30,7 +32,7 @@ export default function Home() {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
@@ -44,6 +46,12 @@ export default function Home() {
 
   return (
     <main className="relative bg-[#0B0E14] text-[#F4F1EA] min-h-screen overflow-x-hidden">
+      {/* Custom Magnetic Cursor */}
+      <CustomCursor />
+
+      {/* Grain Texture & Soft Mesh Gradient Backdrop */}
+      <GrainOverlay />
+
       {/* Fixed 3D Canvas Background */}
       <Scene3D scrollProgress={scrollProgress} />
 
