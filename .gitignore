@@ -46,3 +46,4 @@ Thumbs.db
 # TypeScript build cache
 *.tsbuildinfo
 next-env.d.ts
+node_modules/
