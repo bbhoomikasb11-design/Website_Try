@@ -1,0 +1,8 @@
+{
+  "app/page.tsx -> @/components/canvas/Scene3D": {
+    "id": "app/page.tsx -> @/components/canvas/Scene3D",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_canvas_Scene3D_tsx.js"
+    ]
+  }
+}
